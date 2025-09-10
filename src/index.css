@@ -2,41 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Interior Design Studio Design System - Sophisticated & Elegant */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base Colors - Warm & Sophisticated */
+    --background: 45 15% 97%;
+    --foreground: 24 9% 10%;
 
+    /* Card & Surface */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 24 9% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 24 9% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Rich Charcoal */
+    --primary: 24 9% 10%;
+    --primary-foreground: 45 15% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm Cream */
+    --secondary: 45 25% 94%;
+    --secondary-foreground: 24 9% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Tones */
+    --muted: 45 15% 94%;
+    --muted-foreground: 24 5% 64%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm Gold */
+    --accent: 38 92% 50%;
+    --accent-foreground: 45 15% 97%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Status Colors */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 45 10% 89%;
+    --input: 45 10% 89%;
+    --ring: 38 92% 50%;
 
+    /* Design System Extensions */
+    --luxury: 38 92% 50%;
+    --luxury-foreground: 24 9% 10%;
+    
+    --warm-neutral: 45 15% 97%;
+    --warm-neutral-foreground: 24 9% 10%;
+    
+    --elegant-dark: 24 9% 10%;
+    --elegant-dark-foreground: 45 15% 97%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24, 9%, 10%) 0%, hsl(24, 15%, 20%) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(38, 92%, 50%) 0%, hsl(42, 87%, 55%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(45, 25%, 94%) 0%, hsl(45, 15%, 97%) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(24, 9%, 10%, 0.15);
+    --shadow-luxury: 0 8px 32px -8px hsl(38, 92%, 50%, 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(24, 9%, 10%, 0.1);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing & Layout */
     --radius: 0.5rem;
+    --section-padding: 6rem;
+    --container-padding: 2rem;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +139,62 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  .container-padding {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-luxury {
+    background: var(--gradient-luxury);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-elegant {
+    transition: var(--transition-elegant);
+  }
+
+  .text-heading {
+    font-family: var(--font-heading);
+  }
+
+  .text-body {
+    font-family: var(--font-body);
   }
 }
